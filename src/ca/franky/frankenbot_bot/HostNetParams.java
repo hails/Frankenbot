@@ -25,7 +25,7 @@ import java.net.UnknownHostException;
  * @author fbegin1
  */
 
-public class HostNetParam {
+public class HostNetParams {
     // Name of the main interface e.g. eth0, eth1
     String primaryInterfaceName;
 
@@ -57,7 +57,7 @@ public class HostNetParam {
     /**
      * Our main constructor
      */
-    public HostNetParam () {
+    public HostNetParams () {
 
         /**
          * We rely on netstat -rn to get host routing information
