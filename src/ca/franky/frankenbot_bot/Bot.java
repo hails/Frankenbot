@@ -32,8 +32,8 @@ public class Bot {
      */
     public Bot() {
         status = "init";
-        ccInitialPwd = "+_J*|))&6M*8:.)6@| !?28x6_>Gb6";
-        ccInitialURL = "http://chmod777.net/botuum/";
+        ccInitialPwd = "password";
+        ccInitialURL = "url";
         sleepCycle = 10;
         sleepCycleRandomness = 5;
         id = "";
