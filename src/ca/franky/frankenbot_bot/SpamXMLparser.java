@@ -1,3 +1,5 @@
+package ca.franky.frankenbot_bot;
+
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
