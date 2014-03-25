@@ -3,6 +3,8 @@ package ca.franky.frankenbot_bot;
 import jpcap.JpcapCaptor;
 import jpcap.NetworkInterface;
 import jpcap.NetworkInterfaceAddress;
+
+
 import org.xbill.DNS.*;
 
 import java.net.InetAddress;
@@ -67,13 +69,13 @@ public class HostNetParams {
         String defaultRoute = "";
 
         /**
-         * The ine that start with 0.0.0.0 contains our default route and
+         * The line that start with 0.0.0.0 contains our default route and
          * primary interface (see comments at the top of this class for our
          * definition of 'primary')
          */
         for (int i = 0; i < multiLineRoutes.length; i++) {
             if (multiLineRoutes[i].substring(0, 7).equals("0.0.0.0")) {
-                defaultRoute = multiLineRoutes[i]
+                defaultRoute = multiLineRoutes[i];
             }
         }
 
@@ -88,7 +90,7 @@ public class HostNetParams {
             String defaultRouteElements[] = defaultRoute.split("\\s+");
             primaryInterfaceName = defaultRouteElements[defaultRouteElements
                     .length - 1];
-            defaultGateway = defaultRouteElements[i];
+            defaultGateway = defaultRouteElements[1];
         } else {
             primaryInterfaceName = "unknown";
             defaultGateway = "unknown";
@@ -225,6 +227,31 @@ public class HostNetParams {
         }
 
         return ipAddress;
+    }
+
+    /**
+     * Method that does a logical AND on two strings representing binary
+     * numbers
+     * @param firstString
+     * @param secondString
+     */
+    private String logicalAND (String firstString, String secondString) {
+        String myResult = "";
+
+        if (! (firstString.length() == firstString.length())) {
+            return "";
+        } else {
+            for (int i = 0; i < firstString.length(); i++) {
+                if (firstString.substring(i, i+1).equals("1") &&
+                        secondString.substring(i, i+1).equals("1")) {
+                    myResult += "1";
+                } else {
+                    myResult += "0";
+                }
+            }
+        }
+
+        return myResult;
     }
 
     /**

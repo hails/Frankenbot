@@ -1,9 +1,6 @@
 package ca.franky.frankenbot_bot;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
@@ -40,7 +37,7 @@ public class CC_Connector {
 
     /**
      * Our main constructor
-     * @param myPostData A 2-dimensional array containing the data we want
+     * @param myPostArray A 2-dimensional array containing the data we want
      *                   to post
      * @param myccURL The url where we are sending this POST
      * @param debug Whether or not we are running in debug mode
@@ -55,7 +52,7 @@ public class CC_Connector {
         for (int i = 0; i < myPostArray.length; i++){
             try {
                 postData += URLEncoder.encode(myPostArray[i][0], "UTF-8") +
-                        "=" + URLEncoder.encode(myPostArray[i]1,
+                        "=" + URLEncoder.encode(myPostArray[i][1],
                         "UTF-8") + "&";
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();

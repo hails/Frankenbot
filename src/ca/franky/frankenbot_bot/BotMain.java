@@ -209,7 +209,7 @@ public class BotMain {
 
                 case sleep:
                     if (debug) System.out.println("C&C told me to sleep");
-                    Tools.sleep(myBot, sleepCycle, myBot.sleepCycleRandomness,
+                    Tools.sleep(myBot.sleepCycle, myBot.sleepCycleRandomness,
                             debug);
                     break;
 
